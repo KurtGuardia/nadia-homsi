@@ -13,7 +13,7 @@ export default function HeroSection () {
           className="mb-8"
         />
         <p className="text-xl text-[#2D2D2D] mb-6 font-sans">Médica clínica y terapeuta holística. Co-fundadora del Centro Médico Holístico Sananda.</p>
-        <a href="https://wa.me/59164903531?text=Hola%20Dr.%20Nadia,%20quisiera%20saber%20m%C3%A1s%20acerca%20de..." target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/59164903531?text=Hola%20Dra.%20Nadia,%20quisiera%20saber%20m%C3%A1s%20acerca%20de..." target="_blank" rel="noopener noreferrer">
           <Button className="bg-[#7C9082] hover:bg-[#4A4063] text-white font-sans">Consulta Ahora</Button>
         </a>
       </div>
