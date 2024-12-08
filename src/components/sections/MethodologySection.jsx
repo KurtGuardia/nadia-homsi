@@ -1,9 +1,9 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { LeafIcon, HeartPulseIcon, BrainIcon, SunIcon } from 'lucide-react'
 
-export default function MethodologySection() {
+export default function MethodologySection () {
   return (
-    <section className="container mx-auto py-16 md:py-24 lg:py-32">
+    <section id="metodologia" className="container mx-auto py-16 md:py-24 lg:py-32">
       <h2 className="text-5xl font-bold text-center text-[#4A4063] mb-12 font-handwritten">Mi Metodología</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <Card className="bg-[#F5F1E8] border-[#7C9082] transition-all duration-300 hover:shadow-xl hover:-translate-y-1">

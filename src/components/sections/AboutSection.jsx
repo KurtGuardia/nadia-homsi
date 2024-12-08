@@ -1,19 +1,19 @@
 import Image from 'next/image'
 
-export default function AboutSection() {
+export default function AboutSection () {
   return (
-    <section className="bg-white py-16 md:py-24 lg:py-32 mt-16">
+    <section id="sobre-mi" className="bg-white py-16 md:py-24 lg:py-32 mt-16">
       <div className="container mx-auto">
         <h2 className="text-5xl font-bold text-center text-[#4A4063] mb-8 font-handwritten">Mi Camino de Transformación</h2>
         <div className="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto">
           <div className="md:w-1/2 mt-8 md:mt-0 flex items-center justify-center">
             <div className="overflow-hidden rounded-lg">
-              <Image 
-                src="/nadia_yoga.jpg" 
-                alt="Dra. Nadia meditando" 
-                width={400} 
-                height={400} 
-                className="rounded-lg shadow-lg transition-transform duration-700 scale-110 hover:scale-100" 
+              <Image
+                src="/nadia_yoga.jpg"
+                alt="Dra. Nadia meditando"
+                width={400}
+                height={400}
+                className="rounded-lg shadow-lg transition-transform duration-700 scale-110 hover:scale-100"
               />
             </div>
           </div>

@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-export default function VisionSection() {
+export default function VisionSection () {
   return (
-    <section className="bg-[#7C9082] py-16 md:py-24 lg:py-32 text-white">
+    <section id="vision" className="bg-[#7C9082] py-16 md:py-24 lg:py-32 text-white">
       <div className="container mx-auto">
         <h2 className="text-5xl font-bold text-center text-[#F5F1E8] mb-8 font-handwritten">Mi Visión</h2>
         <div className="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto">
@@ -16,12 +16,12 @@ export default function VisionSection() {
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0 flex items-center justify-center">
             <div className="overflow-hidden rounded-lg">
-              <Image 
-                src="/nadia_playa.jpg" 
-                alt="Dra. Nadia en la playa" 
-                width={400} 
-                height={400} 
-                className="rounded-lg shadow-lg transition-transform duration-700 scale-110 hover:scale-100" 
+              <Image
+                src="/nadia_playa.jpg"
+                alt="Dra. Nadia en la playa"
+                width={400}
+                height={400}
+                className="rounded-lg shadow-lg transition-transform duration-700 scale-110 hover:scale-100"
               />
             </div>
           </div>
