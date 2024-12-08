@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 export default function Navbar() {
   return (
     <nav className="bg-[#7C9082]">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center py-4">
         <Image src="/logo blanco.png" alt="Dra. Nadia Homsi Logo" width={120} height={40} />
         <div className="space-x-4">
           <Button variant="ghost" className="text-white hover:text-[#4A4063]">Inicio</Button>

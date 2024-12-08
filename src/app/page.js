@@ -5,17 +5,19 @@ import AboutSection from '@/components/sections/AboutSection'
 import MethodologySection from '@/components/sections/MethodologySection'
 import VisionSection from '@/components/sections/VisionSection'
 import CTASection from '@/components/sections/CTASection'
+import InstagramSection from '@/components/sections/InstagramSection'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#F5F1E8]">
+    <main>
       <Navbar />
       <HeroSection />
       <AboutSection />
       <MethodologySection />
       <VisionSection />
+      <InstagramSection />
       <CTASection />
       <Footer />
-    </div>
+    </main>
   )
 }

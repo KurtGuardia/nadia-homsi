@@ -21,7 +21,7 @@ export default function VisionSection() {
                 alt="Dra. Nadia en la playa" 
                 width={400} 
                 height={400} 
-                className="rounded-lg shadow-lg transition-transform duration-700 hover:scale-110" 
+                className="rounded-lg shadow-lg transition-transform duration-700 scale-110 hover:scale-100" 
               />
             </div>
           </div>

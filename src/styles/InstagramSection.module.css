@@ -1,0 +1,21 @@
+.instagram-post-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.instagram-post-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Hide default Instagram embed header */
+.instagram-post-container :global(.instagram-media) {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.instagram-post-container :global(.instagram-media-rendered) {
+  margin: 0 !important;
+}
