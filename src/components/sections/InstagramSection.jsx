@@ -31,10 +31,10 @@ export default function InstagramSection () {
   }, [] )
 
   return (
-    <section id="ig" className="bg-[#F5F1E8] py-16 md:py-24 lg:py-32">
+    <section id="ig" className="bg-background py-16 md:py-24 lg:py-32">
       <div className="container mx-auto">
-        <h2 className="text-5xl font-bold text-center text-[#4A4063] mb-8 font-handwritten">Sígueme en Instagram</h2>
-        <a className="block text-xl text-center text-[#2D2D2D] mb-12" href="https://www.instagram.com/nadi14hm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" rel="noopener noreferrer" target='_blank'>@nadi14hm</a>
+        <h2 className="text-5xl font-bold text-center text-secondary mb-8 font-handwritten">Sígueme en Instagram</h2>
+        <a className="block text-xl text-center text-[var(--text-dark)] mb-12" href="https://www.instagram.com/nadi14hm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" rel="noopener noreferrer" target='_blank'>@nadi14hm</a>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto px-4">
           {posts.map( ( post, index ) => (

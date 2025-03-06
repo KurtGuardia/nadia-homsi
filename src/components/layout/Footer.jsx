@@ -7,7 +7,7 @@ export default function Footer () {
   const copyrightYear = `${month}/${currentYear}`;
 
   return (
-    <footer className="bg-[#4A4063] text-white py-8">
+    <footer className="bg-[var(--secondary-color)] text-white py-8">
       <div className="container mx-auto text-center">
         <Image src="/logo blanco.png" alt="Dra. Nadia Homsi Logo" width={250} height={80} className="mx-auto mb-4" />
         <p>&copy; {copyrightYear} desarrollado por

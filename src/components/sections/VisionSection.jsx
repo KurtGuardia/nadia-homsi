@@ -2,9 +2,9 @@ import Image from 'next/image'
 
 export default function VisionSection () {
   return (
-    <section id="vision" className="bg-[#7C9082] py-16 md:py-24 lg:py-32 text-white">
+    <section id="vision" className="bg-primary py-16 md:py-24 lg:py-32 text-white">
       <div className="container mx-auto">
-        <h2 className="text-5xl font-bold text-center text-[#F5F1E8] mb-8 font-handwritten">Mi Visión</h2>
+        <h2 className="text-5xl font-bold text-center text-background mb-8 font-handwritten">Mi Visión</h2>
         <div className="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto">
           <div className="md:w-1/2 md:pr-12 lg:pr-16 max-w-lg">
             <p className="text-xl mb-4">
