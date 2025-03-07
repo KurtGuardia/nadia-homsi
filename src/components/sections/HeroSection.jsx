@@ -21,7 +21,7 @@ export default function HeroSection () {
           <Image src="/nadia_doc.png" alt="Dra. Nadia Homsi" width={500} height={500} className="rounded-3xl shadow-2xl  w-auto h-full float-right" />
         </div>
       </div>
-      <p className="text-2xl text-center text-[var(--text-dark)] h-[20%] mb-6">Médica clínica y terapeuta holística. <br /> Co-fundadora del Centro Médico Holístico Sananda.</p>
+      <p className="text-2xl text-center text-[var(--text-dark)] h-[20%] mb-6">Te acompaño y ayudo a encontrar y tratar el origen de las patologías físicas y emocionales. <br /> Con un enfoque integral cuerpo, mente, emociones y espíritu. <br /> Priorizo el amor propio como base para la sanación y trabajo en la reprogramación de creencias, promoviendo cambios duraderos y una conexión más profunda contigo mismo, para transformar tu dolor en amor.</p>
     </section>
   )
 }
