@@ -6,14 +6,16 @@ import MethodologySection from '@/components/sections/MethodologySection'
 import VisionSection from '@/components/sections/VisionSection'
 import CTASection from '@/components/sections/CTASection'
 import InstagramSection from '@/components/sections/InstagramSection'
+import SessionsSection from '@/components/sections/SessionsSection'
 
-export default function Home() {
+export default function Home () {
   return (
     <main>
       <Navbar />
       <HeroSection />
       <AboutSection />
       <MethodologySection />
+      <SessionsSection />
       <VisionSection />
       <InstagramSection />
       <CTASection />
