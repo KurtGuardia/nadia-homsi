@@ -1,48 +1,58 @@
-import { Card, CardContent } from '@/components/ui/card'
-import { LeafIcon, HeartPulseIcon, BrainIcon, SunIcon } from 'lucide-react'
+'use client';
 
-const methodologyData = [
-  {
-    icon: LeafIcon,
-    title: "Bioneuroemoción",
-    description: "Integración de emociones y biología",
-  },
-  {
-    icon: HeartPulseIcon,
-    title: "Psiconeuroinmunología",
-    description: "Conexión mente-cuerpo-sistema inmune",
-  },
-  {
-    icon: BrainIcon,
-    title: "Reprogramación de creencias",
-    description: "Transformación de patrones mentales",
-  },
-  {
-    icon: SunIcon,
-    title: "Terapias energéticas",
-    description: "Equilibrio y sanación energética",
-  },
-];
+import { useState } from 'react';
+import MethodologyCard from '../cards/MethodologyCard';
+import Modal from '../ui/Modal';
+import { methodologyData } from '../../data/methodologyData';
 
-const MethodologyCard = ( { icon: Icon, title, description } ) => (
-  <Card className="bg-background border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-    <CardContent className="flex flex-col items-center p-6">
-      <Icon className="w-12 h-12 text-primary mb-4" />
-      <h3 className="text-2xl text-center font-semibold text-secondary mb-2">{title}</h3>
-      <p className="text-xl text-center text-[var(--text-dark)]">{description}</p>
-    </CardContent>
-  </Card>
-);
+const MethodologySection = () => {
+  const [selectedMethod, setSelectedMethod] = useState( null );
 
-export default function MethodologySection () {
   return (
     <section id="metodologia" className="container mx-auto py-16 md:py-24 lg:py-32">
-      <h2 className="text-5xl font-bold text-center text-secondary mb-12 font-handwritten">Mi Metodología</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <h2 className="text-[3.5rem] font-bold text-center text-secondary mb-12 font-handwritten tracking-wider">
+        Mi Metodología
+      </h2>
+      <p className="text-xl text-center text-[var(--text-dark)] mb-12">
+        En cada sesión íntegro y combino diferentes técnicas de acuerdo a la necesidad del paciente.
+        <br />
+        <br />
+        Conoce más sobre las técnicas que utilizo:
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
         {methodologyData.map( ( data, index ) => (
-          <MethodologyCard key={index} {...data} />
+          <MethodologyCard
+            key={index}
+            title={data.title}
+            description={data.description}
+            onShowDetails={() => setSelectedMethod( data )}
+          />
         ) )}
       </div>
+
+      <Modal
+        isOpen={!!selectedMethod}
+        onClose={() => setSelectedMethod( null )}
+        title={selectedMethod?.title}
+      >
+        {selectedMethod && (
+          <div className="space-y-4">
+            <p className="text-lg text-[var(--text-dark)] mb-4">
+              {selectedMethod.description}
+            </p>
+            <h4 className="text-xl font-semibold text-secondary mb-2">¿Qué hace?</h4>
+            <ul className="list-disc pl-6 space-y-2">
+              {selectedMethod.whatItDoes.map( ( item, index ) => (
+                <li key={index} className="text-[var(--text-dark)]">
+                  {item}
+                </li>
+              ) )}
+            </ul>
+          </div>
+        )}
+      </Modal>
     </section>
-  )
-}
+  );
+};
+
+export default MethodologySection;
