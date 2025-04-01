@@ -13,7 +13,7 @@ const MethodologySection = () => {
       id='metodologia'
       className='container mx-auto py-16 md:py-24 lg:py-32'
     >
-      <h2 className='text-[3.5rem] font-bold text-center text-secondary mb-12 font-handwritten tracking-wider'>
+      <h2 className='text-5xl font-bold text-center text-secondary mb-12 font-handwritten tracking-wider'>
         Mi Metodología
       </h2>
       <p className='text-xl text-center text-[var(--text-dark)] mb-12'>

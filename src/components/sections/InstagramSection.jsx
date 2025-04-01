@@ -40,7 +40,7 @@ export default function InstagramSection() {
           Sígueme en Instagram
         </h2>
         <a
-          className='block text-xl text-center text-[var(--text-dark)] mb-12'
+          className='block text-xl text-center text-[var(--text-dark)] mb-4 md:mb-8'
           href='https://www.instagram.com/dra.nadiahomsi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
           rel='noopener noreferrer'
           target='_blank'

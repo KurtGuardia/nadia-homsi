@@ -70,7 +70,7 @@ const SessionsSection = () => {
         boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
         transition: { duration: 0.2 },
       }}
-      className='bg-white p-6 rounded-xl shadow-md transition-shadow duration-300 cursor-default'
+      className='bg-white p-2 md:p-6 rounded-xl shadow-md transition-shadow duration-300 cursor-default'
     >
       <div className='flex items-start space-x-4'>
         <span className='flex-shrink-0 w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center'>
@@ -88,11 +88,11 @@ const SessionsSection = () => {
       id='sessions'
       className='container mx-auto py-16 md:py-24 lg:py-32'
     >
-      <h2 className='text-[3.5rem] font-bold text-center text-secondary mb-12 font-handwritten tracking-wider'>
+      <h2 className='text-5xl font-bold text-center text-secondary font-handwritten tracking-wider mb-12'>
         ¿Cómo son las sesiones conmigo?
       </h2>
 
-      <div className='flex justify-center space-x-4 mb-12'>
+      <div className='flex flex-wrap justify-center gap-4 mb-4 md:mb-12 w-full'>
         <TabButton
           type={SessionType.PRESENCIAL}
           icon='🏥'
@@ -120,7 +120,7 @@ const SessionsSection = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <div className='bg-gray-50 rounded-2xl p-8 shadow-xl'>
+              <div className='bg-gray-50 rounded-2xl p-4 md:p-8 shadow-xl'>
                 <div className='flex items-center space-x-4 mb-6'>
                   <span className='text-4xl'>
                     {sessionContent[activeTab].icon}
@@ -156,13 +156,13 @@ const SessionsSection = () => {
           </AnimatePresence>
         </div>
 
-        <div className='hidden lg:block lg:w-1/3 lg:top-32'>
+        <div className='hidden lg:block lg:w-1/3 lg:top-32 overflow-hidden rounded-2xl'>
           <Image
             src='/imgs/sesiones.jpeg'
             alt='Sesiones terapéuticas en camilla'
             width={400}
             height={600}
-            className='rounded-lg shadow-xl object-cover w-full h-auto'
+            className='rounded-2xl shadow-lg transition-transform duration-700 scale-110 hover:scale-100'
           />
         </div>
       </div>

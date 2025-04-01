@@ -61,13 +61,16 @@ const TestimonySection = () => {
   }, [])
 
   return (
-    <section className='py-20 bg-gradient-to-b from-[#F9F5F6] to-white'>
+    <section
+      id='testimonies'
+      className='py-20 bg-gradient-to-b from-[#F9F5F6] to-white'
+    >
       <div className='container mx-auto px-4'>
-        <h2 className='text-4xl font-bold text-center mb-12 text-[#7C3E66]'>
+        <h2 className='text-4xl font-bold text-center mb-4 md:mb-12 text-[var(--secondary-color)]'>
           Testimonios
         </h2>
 
-        <div className='max-w-3xl mx-auto relative h-[300px]'>
+        <div className='max-w-3xl mx-auto relative h-[530px] md:h-[300px]'>
           <AnimatePresence mode='wait'>
             <motion.div
               key={currentIndex}
@@ -78,14 +81,14 @@ const TestimonySection = () => {
               className='text-center'
             >
               <div className='relative mb-8'>
-                <CurvyQuote className='w-5 h-5 text-[#7C3E66] inline-block align-top transform rotate-180 absolute top-[-15%] left-[-2%]' />
+                <CurvyQuote className='w-5 h-5 text-[var(--secondary-color)] inline-block transform rotate-180 absolute top-[-3%] left-[-1%]' />
                 <p className='text-lg text-gray-700 italic px-4 inline'>
                   {testimonials[currentIndex].text}
                 </p>
-                <CurvyQuote className='w-5 h-5 text-[#7C3E66] inline-block align-top absolute top-[90%]' />
+                <CurvyQuote className='w-5 h-5 text-[var(--secondary-color)] inline-block absolute top-[96%]' />
               </div>
 
-              <p className='text-[#7C3E66] font-semibold'>
+              <p className='text-[var(--secondary-color)] font-semibold'>
                 - {testimonials[currentIndex].author}
               </p>
             </motion.div>
@@ -99,7 +102,7 @@ const TestimonySection = () => {
               onClick={() => setCurrentIndex(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? 'bg-[#7C3E66]'
+                  ? 'bg-[var(--secondary-color)]'
                   : 'bg-gray-300'
               }`}
             />

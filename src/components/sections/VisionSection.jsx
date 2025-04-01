@@ -6,7 +6,7 @@ export default function VisionSection() {
       id='vision'
       className='bg-primary py-16 md:py-24 lg:py-32 text-white'
     >
-      <div className='container mx-auto'>
+      <div className='container mx-auto text-center'>
         <h2 className='text-5xl font-bold text-center text-background mb-8 font-handwritten'>
           Mi Visión
         </h2>
@@ -25,13 +25,13 @@ export default function VisionSection() {
             </p>
           </div>
           <div className='md:w-1/2 mt-8 md:mt-0 flex items-center justify-center'>
-            <div className='overflow-hidden rounded-lg'>
+            <div className='overflow-hidden rounded-2xl'>
               <Image
                 src='/imgs/nadia_playa.jpg'
                 alt='Dra. Nadia en la playa'
                 width={400}
                 height={400}
-                className='rounded-lg shadow-lg transition-transform duration-700 scale-110 hover:scale-100'
+                className='rounded-2xl shadow-lg transition-transform duration-700 scale-110 hover:scale-100'
               />
             </div>
           </div>
