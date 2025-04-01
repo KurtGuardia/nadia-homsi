@@ -14,10 +14,10 @@ export default function HeroSection() {
             className='mb-8'
           />
           <p className='text-lg text-center text-[var(--text-dark)] h-[20%] mb-6'>
-            Te acompaño y ayudo a encontrar y tratar el
-            origen de las patologías físicas y emocionales.{' '}
-            <br /> Con un enfoque integral cuerpo, mente,
-            emociones y espíritu.{' '}
+            Te acompaño a encontrar y tratar el origen de
+            las patologías físicas y emocionales. <br /> Con
+            un enfoque integral cuerpo, mente, emociones y
+            espíritu.{' '}
           </p>
           <a
             href='https://wa.me/59164903531?text=Hola%20Dra.%20Nadia,%20quisiera%20saber%20m%C3%A1s%20acerca%20de...'
