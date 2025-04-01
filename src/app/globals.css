@@ -9,10 +9,10 @@
   }
 
   :root {
-    --text-dark: #2D2D2D;
-    --text-gray: #787C82;
+    --text-dark: #2d2d2d;
+    --text-gray: #787c82;
 
-    --background: #F5F1E8;
+    --background: #f5f1e8;
     --foreground: var(--text-dark);
 
     --card: var(--background);
@@ -21,16 +21,18 @@
     --popover: var(--background);
     --popover-foreground: var(--text-dark);
 
-    --primary: #7C9082;
+    --primary: #7c9082;
+    --primary-rgb: 124, 144, 130;
     --primary-foreground: var(--background);
 
     --secondary-color: #4a4063;
+    --secondary-color-rgb: 74, 64, 99;
     --secondary-color-foreground: var(--background);
 
     --muted: var(--background);
     --muted-foreground: var(--text-gray);
 
-    --accent: #FFB31A;
+    --accent: #ffb31a;
     --accent-foreground: var(--text-gray);
 
     --destructive: 0 84.2% 60.2%;
