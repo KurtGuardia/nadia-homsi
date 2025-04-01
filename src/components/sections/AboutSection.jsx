@@ -3,12 +3,12 @@ import Image from 'next/image'
 export default function AboutSection() {
   return (
     <section id='sobre-mi' className='bg-white py-20 mt-16'>
-      <div className='container mx-auto text-center'>
-        <h2 className='text-5xl font-bold text-secondary mb-8 font-handwritten'>
+      <div className='container mx-auto text-center md:text-justify'>
+        <h2 className='text-5xl font-bold text-secondary text-center mb-8 font-handwritten'>
           Un poco sobre mi
         </h2>
         <div className='flex justify-center mb-6'>
-          <p className='text-lg text-[var(--text-dark)] mb-0 md:mb-12'>
+          <p className='text-xl text-[var(--text-dark)] mb-0 md:mb-12'>
             Soy Médica Cirujana, formada en la Universidad
             Mayor de San Simón. Me gradué como médica
             convencional y luego continué mi camino en

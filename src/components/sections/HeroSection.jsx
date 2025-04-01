@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 
 export default function HeroSection() {
   return (
-    <section className='container flex flex-col gap-2 mx-auto h-[90vh]'>
+    <section className='container flex flex-col gap-2 mx-auto h-full md:h-[90vh]'>
       <div className='flex flex-col md:flex-row items-center flex-1'>
         <div className='md:w-1/2 h-fit px-0 md:px-10'>
           <Image
@@ -13,7 +13,7 @@ export default function HeroSection() {
             height={300}
             className='mb-8'
           />
-          <p className='text-lg text-center text-[var(--text-dark)] mb-6 md:h-[20%]'>
+          <p className='text-2xl text-center text-[var(--text-dark)] mb-6 md:h-[20%]'>
             Te acompaño a encontrar y tratar el origen de
             las patologías físicas y emocionales. <br /> Con
             un enfoque integral cuerpo, mente, emociones y
