@@ -9,6 +9,7 @@ import CTASection from '@/components/sections/CTASection'
 import InstagramSection from '@/components/sections/InstagramSection'
 import SessionsSection from '@/components/sections/SessionsSection'
 import TestimonySection from '@/components/sections/TestimonySection'
+import PartnersSection from '@/components/sections/PartnersSection'
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <VisionSection />
       <CoursesSection />
       <InstagramSection />
+      <PartnersSection />
       <TestimonySection />
       <CTASection />
       <Footer />

@@ -17,8 +17,8 @@ const MethodologySection = () => {
         Mi Metodología
       </h2>
       <p className='text-xl text-center text-[var(--text-dark)] mb-12'>
-        En cada sesión íntegro y combinando diferentes
-        técnicas de acuerdo a la necesidad del paciente.
+        En cada sesión íntegro y combino diferentes técnicas
+        de acuerdo a la necesidad del paciente.
         <br />
         <br />
         Conoce más sobre las técnicas que utilizo:

@@ -15,17 +15,19 @@ export default function AboutSection() {
             Argentina con la intención de especializarme en
             Neurología. Sin embargo, durante ese proceso
             —tras una crisis emocional y física— descubrí el
-            mundo de las terapias alternativas, y todo
-            comenzó a transformarse.
+            mundo de las terapias alternativas, y fue a
+            través de la meditación como herramienta de
+            transformación que todo empezó a cambiar.
             <br />
             <br />
-            Empecé a experimentar en mí misma cómo, sin
-            recurrir a tratamientos farmacológicos —que
-            muchas veces terminan dañando nuestro sistema—,
-            era posible sanar. Mi salud mejoró notablemente,
-            fortalecí mi autoestima, mis relaciones
-            personales se volvieron más sanas, y me sentía
-            con mayor vitalidad y propósito.
+            Al experimentar en mí misma, comprendí que la
+            sanación no siempre requiere tratamientos
+            farmacológicos que, en muchos casos, terminan
+            dañando nuestro sistema. Mi salud mejoró
+            notablemente, mi autoestima se fortaleció, mis
+            relaciones se volvieron más sanas, y empecé a
+            sentir una energía y un propósito que antes no
+            conocía.
           </p>
         </div>
         <div className='flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto'>
@@ -47,27 +49,42 @@ export default function AboutSection() {
             <p className='text-xl text-[var(--text-dark)] mb-4'>
               Esa transformación profunda me llevó a tomar
               una decisión importante: renunciar al hospital
-              en el que trabajaba, ya que no podía compartir
-              desde allí todo lo que estaba aprendiendo y
-              viviendo.
+              en el que trabajaba. Necesitaba compartir y
+              aplicar todo lo que había aprendido, pero
+              dentro del sistema convencional no encontraba
+              el espacio para hacerlo.
               <br />
               <br />
-              Hoy formo parte del Centro Sananda, un espacio
-              donde integramos la medicina convencional con
-              terapias alternativas como el
-              electrobiomagnetismo, la musicoterapia, la
-              bioneuroemoción, la biodecodificación, la
-              danzaterapia y las terapias energéticas.
+              Hoy soy especialista en Bioneuroemoción,
+              certificada por el Enric Corbera Institute
+              (España), certificada en Biodecodificación por
+              el Centro Argentino de Psicología Integral, y
+              en Psiconeuroinmunología por la Universidad
+              Tecnológica de España. Además, cuento con
+              diversas certificaciones en terapias
+              energéticas y actualmente curso la
+              certificación en Somatic Experiencing en el
+              Trauma Institute.
               <br />
               <br />
-              Acompaño a cada persona desde el corazón, con
-              empatía y amor. Creo en el amor propio como
-              base de todo proceso de sanación, en la
-              posibilidad de generar cambios profundos y
-              duraderos, y en transformar el dolor en amor.
-              Lo digo con certeza, porque lo he vivido:
-              sanar es posible cuando nos atrevemos a mirar
-              más allá
+              Este camino me llevó a cofundar el Centro
+              Sananda, un espacio donde integramos la
+              medicina convencional con terapias
+              alternativas mencionadas además de
+              electrobiomagnetismo, la energía escalar, la
+              danzaterapia, entre otros.
+              <br />
+              <br />
+              Hoy, reúno todo lo aprendido y vivido para
+              crear mis propios métodos y protocolos.
+              Acompaño a cada persona con empatía y amor,
+              desde el corazón. Creo firmemente en el amor
+              propio como la base de todo proceso de
+              sanación, en la posibilidad de generar cambios
+              profundos y duraderos, y en la capacidad de
+              transformar el dolor en amor. Lo sé con
+              certeza, porque lo he vivido: sanar es posible
+              cuando nos atrevemos a mirar más allá.
             </p>
           </div>
         </div>

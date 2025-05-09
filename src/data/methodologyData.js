@@ -25,9 +25,9 @@ export const methodologyData = [
     image: '/imgs/biodecodificacion.png',
   },
   {
-    title: 'Meditación guiada terapéutica tipo hipnosis',
+    title: 'Meditación guiada tipo hipnosis-Constelacion',
     description:
-      'La meditación guiada terapéutica tipo hipnosis es una técnica que combina la relajación profunda con la guía verbal para acceder al subconsciente, facilitar la introspección y promover cambios positivos en el bienestar emocional y físico.',
+      'La meditación guiada tipo hipnosis-Constelacion es una técnica que combina la relajación profunda con la guía verbal para acceder al subconsciente, facilitar la introspección y promover cambios positivos en el bienestar emocional y físico.',
     whatItDoes: [
       'Induce un estado de relajación profunda: Lleva a la persona a un estado mental similar al trance, donde el cuerpo se relaja y la mente está más receptiva.',
       'Accede al subconsciente: Permite explorar emociones, creencias o recuerdos que no son fácilmente accesibles en el estado consciente.',
