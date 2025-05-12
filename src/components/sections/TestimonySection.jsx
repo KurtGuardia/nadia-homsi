@@ -66,7 +66,7 @@ const TestimonySection = () => {
       className='py-20 bg-gradient-to-b from-[#F9F5F6] to-white'
     >
       <div className='container mx-auto px-4'>
-        <h2 className='text-4xl font-bold text-center mb-4 md:mb-12 text-[var(--secondary-color)]'>
+        <h2 className='text-5xl font-bold text-center text-secondary font-handwritten tracking-wider mb-12'>
           Testimonios
         </h2>
 

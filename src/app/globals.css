@@ -36,7 +36,7 @@
     --accent: #ffb31a;
     --accent-foreground: var(--text-gray);
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: #ce2e2e;
     --destructive-foreground: 210 40% 98%;
 
     --border: var(--primary);

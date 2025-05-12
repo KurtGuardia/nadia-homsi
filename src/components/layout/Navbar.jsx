@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 
@@ -14,63 +15,72 @@ export default function Navbar() {
   return (
     <nav className='bg-[var(--primary)] fixed top-0 left-0 right-0 z-50 shadow-xl'>
       <div className='container mx-auto flex justify-between items-center py-4'>
-        <a href='#'>
+        <Link href='/' passHref>
           <Image
             src='/logo blanco.png'
             alt='Dra. Nadia Homsi Logo'
             width={120}
             height={40}
           />
-        </a>
+        </Link>
         <div className='space-x-4 md:flex hidden'>
-          <a href='#sobre-mi'>
+          <Link href='#sobre-mi' passHref>
             <Button
               variant='ghost'
               className='text-white hover:bg-primary hover:text-[var(--accent)]'
             >
               Sobre Mí
             </Button>
-          </a>
-          <a href='#metodologia'>
+          </Link>
+
+          <Link href='#metodologia' passHref>
             <Button
               variant='ghost'
               className='text-white hover:bg-primary hover:text-[var(--accent)]'
             >
               Metodología
             </Button>
-          </a>
-          <a href='#partners'>
-            <Button
-              variant='ghost'
-              className='text-white hover:bg-primary hover:text-[var(--accent)]'
-            >
-              Colaboraciones
-            </Button>
-          </a>
-          <a href='#vision'>
+          </Link>
+          <Link href='#vision' passHref>
             <Button
               variant='ghost'
               className='text-white hover:bg-primary hover:text-[var(--accent)]'
             >
               Visión
             </Button>
-          </a>
-          <a href='#ig'>
+          </Link>
+          <Link href='#courses' passHref>
+            <Button
+              variant='ghost'
+              className='text-white hover:bg-primary hover:text-[var(--accent)]'
+            >
+              Cursos y Talleres
+            </Button>
+          </Link>
+          <Link href='#ig' passHref>
             <Button
               variant='ghost'
               className='text-white hover:bg-primary hover:text-[var(--accent)]'
             >
               IG
             </Button>
-          </a>
-          <a href='#contacto'>
+          </Link>
+          <Link href='#partners' passHref>
+            <Button
+              variant='ghost'
+              className='text-white hover:bg-primary hover:text-[var(--accent)]'
+            >
+              Colaboraciones
+            </Button>
+          </Link>
+          <Link href='#contacto' passHref>
             <Button
               variant='ghost'
               className='text-white hover:bg-primary hover:text-[var(--accent)]'
             >
               Contacto
             </Button>
-          </a>
+          </Link>
         </div>
         <div className='md:hidden'>
           <button
@@ -95,9 +105,10 @@ export default function Navbar() {
           {isOpen && (
             <div className='fixed top-0 left-0 bottom-0 right-0 bg-primary rounded p-4 flex items-center justify-center'>
               <div className='text-center'>
-                <a
+                <Link
                   href='#sobre-mi'
                   onClick={() => setIsOpen(false)}
+                  passHref
                 >
                   <Button
                     variant='ghost'
@@ -105,10 +116,11 @@ export default function Navbar() {
                   >
                     Sobre Mí
                   </Button>
-                </a>
-                <a
+                </Link>
+                <Link
                   href='#metodologia'
                   onClick={() => setIsOpen(false)}
+                  passHref
                 >
                   <Button
                     variant='ghost'
@@ -116,21 +128,11 @@ export default function Navbar() {
                   >
                     Metodología
                   </Button>
-                </a>
-                <a
-                  href='#partners'
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Button
-                    variant='ghost'
-                    className='text-2xl text-white hover:text-[var(--text-gray)] hover:bg-background w-full block mb-4'
-                  >
-                    Colaboraciones
-                  </Button>
-                </a>
-                <a
+                </Link>
+                <Link
                   href='#vision'
                   onClick={() => setIsOpen(false)}
+                  passHref
                 >
                   <Button
                     variant='ghost'
@@ -138,10 +140,23 @@ export default function Navbar() {
                   >
                     Visión
                   </Button>
-                </a>
-                <a
+                </Link>
+                <Link
+                  href='#courses'
+                  onClick={() => setIsOpen(false)}
+                  passHref
+                >
+                  <Button
+                    variant='ghost'
+                    className='text-2xl text-white hover:text-[var(--text-gray)] hover:bg-background w-full block mb-4'
+                  >
+                    Cursos y Talleres
+                  </Button>
+                </Link>
+                <Link
                   href='#ig'
                   onClick={() => setIsOpen(false)}
+                  passHref
                 >
                   <Button
                     variant='ghost'
@@ -149,10 +164,23 @@ export default function Navbar() {
                   >
                     IG
                   </Button>
-                </a>
-                <a
+                </Link>
+                <Link
+                  href='#partners'
+                  onClick={() => setIsOpen(false)}
+                  passHref
+                >
+                  <Button
+                    variant='ghost'
+                    className='text-2xl text-white hover:text-[var(--text-gray)] hover:bg-background w-full block mb-4'
+                  >
+                    Colaboraciones
+                  </Button>
+                </Link>
+                <Link
                   href='#contacto'
                   onClick={() => setIsOpen(false)}
+                  passHref
                 >
                   <Button
                     variant='ghost'
@@ -160,7 +188,7 @@ export default function Navbar() {
                   >
                     Contacto
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
           )}

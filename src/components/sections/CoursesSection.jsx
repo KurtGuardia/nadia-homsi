@@ -1,8 +1,9 @@
-'use client' // Add this at the top for client-side hooks
+'use client'
 
 import React, { useState, useEffect } from 'react'
-import { db } from '@/lib/firebase' // Corrected path
+import { db } from '@/lib/firebase'
 import { collection, getDocs } from 'firebase/firestore'
+import Image from 'next/image'
 
 const CoursesSection = () => {
   const [courses, setCourses] = useState([])
@@ -33,11 +34,10 @@ const CoursesSection = () => {
 
         const eventsCol = collection(db, 'events')
         const eventSnapshot = await getDocs(eventsCol)
-        // Sort events by timestamp, assuming 'timestamp' is a Firebase Timestamp object or a string that can be converted to a Date
         const eventList = eventSnapshot.docs
           .map((doc) => {
             const data = doc.data()
-            // Convert Firebase Timestamp to JavaScript Date if necessary
+
             const timestamp = data.timestamp?.toDate
               ? data.timestamp.toDate()
               : new Date(data.timestamp)
@@ -68,8 +68,8 @@ const CoursesSection = () => {
         className='py-16 bg-background text-foreground'
       >
         <div className='container mx-auto px-4 text-center'>
-          <p className='text-xl text-primary'>
-            Cargando contenido...
+          <p className='text-xl lg:text-5xl font-bold text-primary animate-pulse'>
+            Cargando cursos y talleres...
           </p>
         </div>
       </section>
@@ -82,11 +82,9 @@ const CoursesSection = () => {
         id='courses'
         className='py-16 bg-background text-foreground'
       >
-        <div className='container mx-auto px-4 text-center'>
-          <p className='text-xl text-destructive'>
-            {error}
-          </p>
-        </div>
+        <p className='text-xl lg:text-3xl font-bold text-center mb-12 text-destructive'>
+          {error}
+        </p>
       </section>
     )
   }
@@ -97,48 +95,70 @@ const CoursesSection = () => {
       className='py-16 bg-background text-foreground'
     >
       <div className='container mx-auto px-4'>
-        <h2 className='text-4xl font-bold text-center mb-12 text-primary'>
+        <h2 className='text-5xl font-bold text-center text-secondary font-handwritten tracking-wider mb-12'>
           Nuestros Cursos y Talleres
         </h2>
 
         {/* Courses Subsection */}
         <div className='mb-16'>
-          <h3 className='text-3xl font-semibold mb-8 text-secondary-color text-center'>
+          <h3 className='text-center text-3xl text-secondary font-bold mb-4'>
             Cursos Online
           </h3>
-          <div className='grid md:grid-cols-2 gap-8'>
+          <div className='flex flex-wrap gap-8 justify-center'>
             {courses.map((course) => (
               <div
                 key={course.id}
-                className='group relative rounded-lg shadow-lg overflow-hidden border border-primary'
+                className='group relative rounded-lg shadow-lg overflow-hidden border border-primary w-full md:w-[calc(50%-1rem)]'
               >
-                <img
-                  src={course.img}
-                  alt={course.title}
-                  className='w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105'
-                />
-                <div className='absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 backdrop-blur-sm'>
-                  <p className='text-white text-center text-sm'>
-                    {course.description}
-                  </p>
+                <div className='relative w-full h-64'>
+                  <Image
+                    src={course.img}
+                    alt={course.title}
+                    layout='fill'
+                    objectFit='cover'
+                    className='transition-transform duration-300 group-hover:scale-95'
+                  />
+                  {/* Overlay for the image description */}
+                  <div className='absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 backdrop-blur-sm'>
+                    <p
+                      className='text-white text-center text-sm'
+                      dangerouslySetInnerHTML={{
+                        __html: course.description,
+                      }}
+                    />
+                  </div>
                 </div>
                 <div className='p-6 bg-card'>
                   <h4 className='text-xl font-semibold mb-2 text-card-foreground'>
                     {course.title}
                   </h4>
-                  <a
-                    href={course.link}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='inline-block bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-2 px-6 rounded-md transition-colors duration-300 mt-4'
-                  >
-                    Ver Curso
-                  </a>
+                  {course.link ? (
+                    <a
+                      href={course.link}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='inline-block bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-2 px-6 rounded-md transition-colors duration-300 mt-4'
+                    >
+                      Ver Curso
+                    </a>
+                  ) : (
+                    <div className='relative inline-block'>
+                      <button
+                        className='inline-block bg-gray-400 text-primary-foreground font-semibold py-2 px-6 rounded-md mt-4 cursor-not-allowed peer/tooltip'
+                        disabled
+                      >
+                        Ver Curso
+                      </button>
+                      <span className='absolute top-0 left-1/2 transform -translate-x-1/2 w-max px-2 py-1 bg-black text-white text-xs rounded opacity-0 peer-hover/tooltip:opacity-100 transition-opacity duration-300 pointer-events-none'>
+                        Próximamente
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
             {courses.length === 0 && !loading && (
-              <p className='text-center text-muted-foreground md:col-span-2'>
+              <p className='text-center text-muted-foreground w-full'>
                 No hay cursos disponibles en este momento.
               </p>
             )}
@@ -147,7 +167,7 @@ const CoursesSection = () => {
 
         {/* Workshops Subsection */}
         <div className='mb-16'>
-          <h3 className='text-3xl font-semibold mb-8 text-secondary-color text-center'>
+          <h3 className='text-center text-3xl secondary-primary font-bold mb-4'>
             Talleres
           </h3>
           {workshops.length > 0 ? (
@@ -179,24 +199,29 @@ const CoursesSection = () => {
 
         {/* Events Subsection */}
         <div>
-          <h3 className='text-3xl font-semibold mb-8 text-secondary-color text-center'>
+          <h3 className='text-center text-3xl text-secondary font-bold mb-4'>
             Próximos Eventos
           </h3>
-          <div className='grid md:grid-cols-2 gap-8'>
+          <div className='flex flex-wrap gap-8 justify-center'>
             {events.map((event) => (
               <div
                 key={event.id}
-                className='group relative rounded-lg shadow-lg overflow-hidden border border-primary'
+                className='group relative rounded-lg shadow-lg overflow-hidden border border-primary w-full md:w-[calc(50%-1rem)]'
               >
-                <img
-                  src={event.img}
-                  alt={event.title}
-                  className='w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105'
-                />
-                <div className='absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 backdrop-blur-sm'>
-                  <p className='text-white text-center text-sm'>
-                    {event.description}
-                  </p>
+                <div className='relative w-full h-64'>
+                  <Image
+                    src={event.img}
+                    alt={event.title}
+                    layout='fill'
+                    objectFit='cover'
+                    className='transition-transform duration-300 group-hover:scale-105'
+                  />
+                  {/* Overlay for the image description */}
+                  <div className='absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 backdrop-blur-sm'>
+                    <p className='text-white text-center text-sm'>
+                      {event.description}
+                    </p>
+                  </div>
                 </div>
                 <div className='p-6 bg-card'>
                   <h4 className='text-xl font-semibold mb-2 text-card-foreground'>
@@ -223,7 +248,7 @@ const CoursesSection = () => {
               </div>
             ))}
             {events.length === 0 && !loading && (
-              <p className='text-center text-muted-foreground md:col-span-2'>
+              <p className='text-center text-muted-foreground w-full'>
                 No hay eventos programados por el momento.
               </p>
             )}

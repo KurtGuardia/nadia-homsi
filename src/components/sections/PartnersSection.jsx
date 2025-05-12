@@ -33,18 +33,17 @@ const PartnersSection = () => {
   return (
     <section
       id='partners'
-      className='py-12 md:py-16 bg-slate-100'
+      className='bg-primary py-16 md:py-24 lg:py-32 text-white'
     >
-      {' '}
-      {/* Slightly different bg for visual separation */}
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center mb-10 md:mb-14'>
-          <h2 className='text-3xl sm:text-4xl font-bold tracking-tight text-gray-900'>
+          <h2 className='text-5xl font-bold text-center font-handwritten tracking-wider mb-12'>
             Colaboraciones
           </h2>
-          <p className='mt-3 text-lg text-gray-600 sm:mt-4 max-w-2xl mx-auto'>
+          <p className='text-2xl mb-4 mt-3 sm:mt-4 mx-auto'>
             Trabajo en conjunto con estas maravillosas
-            profesionales. ¡Conoce más sobre ellas!
+            profesionales.
+            <br /> ¡Conoce más sobre ellas!
           </p>
         </div>
 
