@@ -27,7 +27,7 @@ export default function CTASection() {
         rel='noopener noreferrer'
         className='block mx-auto w-fit'
       >
-        <Button className='bg-[var(--secondary-color)] hover:bg-primary text-white text-lg px-8 py-3'>
+        <Button variant='secondary'>
           Agenda tu Consulta
         </Button>{' '}
       </a>
