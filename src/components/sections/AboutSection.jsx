@@ -3,12 +3,12 @@ import Image from 'next/image'
 export default function AboutSection() {
   return (
     <section id='sobre-mi' className='bg-white py-20 mt-16'>
-      <div className='container mx-auto text-center md:text-justify'>
+      <div className='container mx-auto text-center lg:text-justify'>
         <h2 className='text-5xl font-bold text-secondary text-center mb-8 font-handwritten'>
           Un poco sobre mi
         </h2>
         <div className='flex justify-center mb-6'>
-          <p className='text-xl text-[var(--text-dark)] mb-0 md:mb-12'>
+          <p className='text-xl text-[var(--text-dark)] mb-0 lg:mb-12'>
             Soy Médica Cirujana, formada en la Universidad
             Mayor de San Simón. Me gradué como médica
             convencional y luego continué mi camino en
@@ -30,8 +30,8 @@ export default function AboutSection() {
             conocía.
           </p>
         </div>
-        <div className='flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto'>
-          <div className='md:w-1/3 my-8 md:my-0 flex items-center justify-center'>
+        <div className='flex flex-col lg:flex-row items-center justify-center max-w-6xl mx-auto'>
+          <div className='lg:w-1/3 my-8 lg:my-0 flex items-center justify-center'>
             <div className='overflow-hidden rounded-2xl'>
               <Image
                 src='/imgs/nadia.jpeg'
@@ -42,7 +42,7 @@ export default function AboutSection() {
               />
             </div>
           </div>
-          <div className='md:w-2/3 md:pl-12 lg:pl-16'>
+          <div className='lg:w-2/3 lg:pl-12 lg:pl-16'>
             <p className='text-3xl text-[var(--secondary-color)] font-bold mb-4'>
               Médica y Terapeuta holística{' '}
             </p>

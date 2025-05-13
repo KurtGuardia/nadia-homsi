@@ -23,20 +23,19 @@ export default function Navbar() {
             height={40}
           />
         </Link>
-        <div className='space-x-4 md:flex hidden'>
+        <div className='space-x-4 lg:flex hidden'>
           <Link href='#sobre-mi' passHref>
             <Button
               variant='ghost'
-              className='text-white hover:bg-primary hover:text-[var(--accent)]'
+              className='text-white hover:bg-primary hover:text-[var(--accent)] p-2 xl:p-4'
             >
               Sobre Mí
             </Button>
           </Link>
-
           <Link href='#metodologia' passHref>
             <Button
               variant='ghost'
-              className='text-white hover:bg-primary hover:text-[var(--accent)]'
+              className='text-white hover:bg-primary hover:text-[var(--accent)] p-2 xl:p-4'
             >
               Metodología
             </Button>
@@ -44,7 +43,7 @@ export default function Navbar() {
           <Link href='#vision' passHref>
             <Button
               variant='ghost'
-              className='text-white hover:bg-primary hover:text-[var(--accent)]'
+              className='text-white hover:bg-primary hover:text-[var(--accent)] p-2 xl:p-4'
             >
               Visión
             </Button>
@@ -52,7 +51,7 @@ export default function Navbar() {
           <Link href='#courses' passHref>
             <Button
               variant='ghost'
-              className='text-white hover:bg-primary hover:text-[var(--accent)]'
+              className='text-white hover:bg-primary hover:text-[var(--accent)] p-2 xl:p-4'
             >
               Cursos y Talleres
             </Button>
@@ -60,7 +59,7 @@ export default function Navbar() {
           <Link href='#ig' passHref>
             <Button
               variant='ghost'
-              className='text-white hover:bg-primary hover:text-[var(--accent)]'
+              className='text-white hover:bg-primary hover:text-[var(--accent)] p-2 xl:p-4'
             >
               IG
             </Button>
@@ -68,7 +67,7 @@ export default function Navbar() {
           <Link href='#partners' passHref>
             <Button
               variant='ghost'
-              className='text-white hover:bg-primary hover:text-[var(--accent)]'
+              className='text-white hover:bg-primary hover:text-[var(--accent)] p-2 xl:p-4'
             >
               Colaboraciones
             </Button>
@@ -76,13 +75,13 @@ export default function Navbar() {
           <Link href='#contacto' passHref>
             <Button
               variant='ghost'
-              className='text-white hover:bg-primary hover:text-[var(--accent)]'
+              className='text-white hover:bg-primary hover:text-[var(--accent)] p-2 xl:p-4'
             >
               Contacto
             </Button>
           </Link>
         </div>
-        <div className='md:hidden'>
+        <div className='lg:hidden'>
           <button
             onClick={toggleMenu}
             className='relative z-10'

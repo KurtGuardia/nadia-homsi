@@ -108,9 +108,9 @@ const CoursesSection = () => {
             {courses.map((course) => (
               <div
                 key={course.id}
-                className='group relative rounded-lg shadow-lg overflow-hidden border border-primary w-full md:w-[calc(50%-1rem)]'
+                className='group relative rounded-lg shadow-lg overflow-hidden border border-primary w-full md:w-[calc(40%-1rem)]'
               >
-                <div className='relative w-full h-64'>
+                <div className='relative w-full h-96'>
                   <Image
                     src={course.img}
                     alt={course.title}
@@ -118,7 +118,6 @@ const CoursesSection = () => {
                     objectFit='cover'
                     className='transition-transform duration-300 group-hover:scale-95'
                   />
-                  {/* Overlay for the image description */}
                   <div className='absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 backdrop-blur-sm'>
                     <p
                       className='text-white text-center text-sm'
@@ -137,19 +136,19 @@ const CoursesSection = () => {
                       href={course.link}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='inline-block bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-2 px-6 rounded-md transition-colors duration-300 mt-4'
+                      className='inline-block bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-2 px-6 rounded-md transition-colors duration-300'
                     >
                       Ver Curso
                     </a>
                   ) : (
                     <div className='relative inline-block'>
                       <button
-                        className='inline-block bg-gray-400 text-primary-foreground font-semibold py-2 px-6 rounded-md mt-4 cursor-not-allowed peer/tooltip'
+                        className='inline-block bg-gray-400 text-primary-foreground font-semibold py-2 px-6 rounded-md cursor-not-allowed peer/tooltip'
                         disabled
                       >
                         Ver Curso
                       </button>
-                      <span className='absolute top-0 left-1/2 transform -translate-x-1/2 w-max px-2 py-1 bg-black text-white text-xs rounded opacity-0 peer-hover/tooltip:opacity-100 transition-opacity duration-300 pointer-events-none'>
+                      <span className='absolute bottom-full left-1/2 transform -translate-x-1/2 w-max px-2 py-1 bg-black text-white text-xs rounded opacity-0 peer-hover/tooltip:opacity-100 transition-opacity duration-300 pointer-events-none'>
                         Próximamente
                       </span>
                     </div>

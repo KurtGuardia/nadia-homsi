@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/button'
 
 export default function HeroSection() {
   return (
-    <section className='container flex flex-col gap-2 mx-auto h-full md:h-[90vh]'>
-      <div className='flex flex-col md:flex-row items-center flex-1'>
-        <div className='md:w-1/2 h-fit px-0 md:px-10'>
+    <section className='container flex flex-col gap-2 mx-auto h-full lg:h-[90vh]'>
+      <div className='flex flex-col lg:flex-row items-center flex-1'>
+        <div className='lg:w-1/2 h-fit px-0 lg:px-10'>
           <Image
             src='/logo colores.png'
             alt='Dra. Nadia Homsi Logo Colores'
@@ -13,7 +13,7 @@ export default function HeroSection() {
             height={300}
             className='mb-8'
           />
-          <p className='text-2xl text-center text-[var(--text-dark)] mb-6 md:h-[20%]'>
+          <p className='text-2xl text-center text-[var(--text-dark)] mb-6 lg:h-[20%]'>
             Te acompaño a encontrar y tratar el origen de
             las patologías físicas y emocionales. <br /> Con
             un enfoque integral cuerpo, mente, emociones y
@@ -34,7 +34,7 @@ export default function HeroSection() {
             </Button>
           </a>
         </div>
-        <div className='md:w-1/2 mt-8 md:mt-0 flex items-center justify-center h-[80%]'>
+        <div className='lg:w-1/2 mt-8 lg:mt-0 flex items-center justify-center h-[80%]'>
           <Image
             src='/imgs/nadia_doc.png'
             alt='Dra. Nadia Homsi'

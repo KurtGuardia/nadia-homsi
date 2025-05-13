@@ -156,7 +156,7 @@ const SessionsSection = () => {
           </AnimatePresence>
         </div>
 
-        <div className='hidden lg:block lg:w-1/3 lg:top-32 overflow-hidden rounded-2xl'>
+        <div className='lg:w-1/3 lg:top-32 overflow-hidden rounded-2xl mt-8 w-fit mx-auto'>
           <Image
             src='/imgs/sesiones.jpeg'
             alt='Sesiones terapéuticas en camilla'
