@@ -6,16 +6,24 @@ import { motion, AnimatePresence } from 'framer-motion'
 const testimonials = [
   {
     text: 'La verdad llega del inconscientemente y de tus sombras, tus sesiónes me ayudaron a mirar a esa oscuridad, y con cada sesión observarla, liberarla y equilibrar mi vibración ✨Ahora se mucho más de mi de lo que sabia antes sobre mi! Esto me permite ser amable, paciente y más amorosa conmigo misma👑♥️ como efectos secundarios a nivel físico mejoró mi sueño, mi alimentación y nuevas oportunidades laborales llegaron a mi vida! Gracias querida Nadia por la confianza, por tu Luz y tu labor 🫶🏻💝 cambias vida con tu magia 💯top!',
-    author: 'Anonymus',
+    author: 'Candy - Portugal',
   },
   {
     text: 'Desde que empecé hacer terapia en Sananda holística realmente marcó una diferencia en mi vida. Las terapias que realizamos me ayudaron a sentirme más equilibrado, tanto física como emocionalmente. Me sentí comprendido y acompañado durante todo el proceso, lo cual me dio mucha confianza. Gracias a tu enfoque integral, logré mejorar en áreas donde sentía estancamiento, y aprendí a conectar mejor conmigo mismo. Estoy muy agradecido por todo lo que me aporto la Dra. Nadia Sin duda recomendaría sus terapias a quienes busquen una transformación real en sus vidas.',
     author: 'Angelo - Bolivia',
   },
-  // {
-  //   text: "A través de una amiga, conocí a Nadia, con quien exploré la pregunta de si deseaba ser madre?  Y si algo me estaba bloqueando en ese proceso? En la primera sesión, nos adentramos profundamente en mi subconsciente y pude ver claramente que el deseo de ser madre era el anhelo de mi alma. También pude identificar los miedos que me estaba bloqueando. En las sesiones posteriores, trabajamos sobre esos miedos, conectando con mi niña interior y acompañándola a verlo de otra manera. Realmente re-programar tu mente. Las sesiones siempre me ofrecieron exactamente lo que necesitaba en cada momento. Nadia trabaja con algo mucho más grande que ella misma y me acompaña con una facilidad y sin juicio, sabiendo exactamente qué decir en el momento justo. Inicialmente tomé las sesiones de forma presencial, pero cuando regresé a mi país, decidí continuar las sesiones en línea. Y me sentí muy feliz de poder anunciar, en una de nuestras primeras sesiones en línea, que estaba embarazada. No podía creerlo, tengo 43 años y todo se orquestó de una manera tan hermosa después de las sesiones con Nadia; estaba lista y abierta para recibir a esta alma el dia que regrese devuelta a mi pareja. Estoy muy agradecida de que Nadia haya cruzado mi camino, y ahora, después de tres meses, la he pedido que continúe acompañándome con un par de sesiones para ayudarme a prepararme en este hermoso viaje de ser madre, entregándome y siendo un canal para esta nueva personita que viene a la tierra.",
-  //   author: "Arwa - Países Bajos"
-  // },
+  {
+    text: 'A través de una amiga, conocí a Nadia, con quien exploré la pregunta de si deseaba ser madre?  Y si algo me estaba bloqueando en ese proceso? En la primera sesión, nos adentramos profundamente en mi subconsciente y pude ver claramente que el deseo de ser madre era el anhelo de mi alma. También pude identificar los miedos que me estaba bloqueando. En las sesiones posteriores, trabajamos sobre esos miedos, conectando con mi niña interior y acompañándola a verlo de otra manera.... (continuación en el siguiente testimonio)',
+    author: 'Arwa - Países Bajos',
+  },
+  {
+    text: 'Realmente re-programar tu mente. Las sesiones siempre me ofrecieron exactamente lo que necesitaba en cada momento. Nadia trabaja con algo mucho más grande que ella misma y me acompaña con una facilidad y sin juicio, sabiendo exactamente qué decir en el momento justo. Inicialmente tomé las sesiones de forma presencial, pero cuando regresé a mi país, decidí continuar las sesiones en línea. Y me sentí muy feliz de poder anunciar, en una de nuestras primeras sesiones en línea, que estaba embarazada. No podía creerlo!.... (continuación en el siguiente testimonio)',
+    author: 'Arwa - Países Bajos',
+  },
+  {
+    text: '...tengo 43 años y todo se orquestó de una manera tan hermosa después de las sesiones con Nadia; estaba lista y abierta para recibir a esta alma el dia que regrese devuelta a mi pareja. Estoy muy agradecida de que Nadia haya cruzado mi camino, y ahora, después de tres meses, la he pedido que continúe acompañándome con un par de sesiones para ayudarme a prepararme en este hermoso viaje de ser madre, entregándome y siendo un canal para esta nueva personita que viene a la tierra.',
+    author: 'Arwa - Países Bajos',
+  },
   {
     text: 'Hola Nadia!! Soy Candy te cuento que cambié de número, sólo te quería agradecer por todo tú trabajo y el amor que le pones a lo que haces, no sabes todo lo que me ayudaste a entender y sanar 🩷🫶🏻🪄 si alguna vez quieres enseñar lo que haces seré tu primera inscrita☺️ te mando un abrazo!!',
     author: 'Candy - Portugal',
@@ -70,7 +78,7 @@ const TestimonySection = () => {
           Testimonios
         </h2>
 
-        <div className='max-w-3xl mx-auto relative h-[530px] md:h-[300px]'>
+        <div className='max-w-3xl mx-auto relative h-[530px] md:h-[300px] overflow-hidden'>
           <AnimatePresence mode='wait'>
             <motion.div
               key={currentIndex}

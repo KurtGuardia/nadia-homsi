@@ -30,6 +30,16 @@ const dancingScript = Dancing_Script({
 export const metadata = {
   title: 'Dra. Nadia Homsi',
   description: 'Médica clínica y terapeuta holística',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+        href: '/favicon.ico',
+        sizes: 'any',
+        type: 'image/x-icon',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({ children }) {

@@ -25,6 +25,8 @@ const CoursesSection = () => {
   const [workshopImages, setWorkshopImages] = useState([])
   const [currentImageIndex, setCurrentImageIndex] =
     useState(0)
+  const [expandedDescriptions, setExpandedDescriptions] =
+    useState({})
 
   useEffect(() => {
     const fetchData = async () => {
@@ -111,6 +113,13 @@ const CoursesSection = () => {
     }
   }, [workshopImages, workshopImages.length])
 
+  const handleToggleDescription = (courseId) => {
+    setExpandedDescriptions((prev) => ({
+      ...prev,
+      [courseId]: !prev[courseId],
+    }))
+  }
+
   // Helper function to format dates for Google Calendar links
   const formatDateForGoogleCalendar = (date) => {
     if (!(date instanceof Date) || isNaN(date.getTime())) {
@@ -184,14 +193,18 @@ const CoursesSection = () => {
               >
                 <div className='relative w-full h-96'>
                   <Image
-                    src={course.img}
+                    src={
+                      course.img
+                        ? course.img
+                        : '/imgs/placeholder.svg'
+                    }
                     alt={course.title}
                     fill
                     sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                     style={{ objectFit: 'cover' }}
                     className='transition-transform duration-300 group-hover:scale-95'
                   />
-                  <div className='absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 backdrop-blur-sm'>
+                  <div className='absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 p-4 backdrop-blur-sm'>
                     <div
                       className='prose prose-sm prose-invert prose-cmsContent max-w-none'
                       dangerouslySetInnerHTML={{
@@ -204,6 +217,28 @@ const CoursesSection = () => {
                   <h4 className='text-xl font-semibold mb-2 text-card-foreground'>
                     {course.title}
                   </h4>
+                  <div
+                    className={`md:hidden prose prose-sm max-w-none my-4 ${
+                      expandedDescriptions[course.id]
+                        ? 'block'
+                        : 'hidden'
+                    } md:block`}
+                    dangerouslySetInnerHTML={{
+                      __html: course.description,
+                    }}
+                  />
+                  <div className='md:hidden my-2'>
+                    <button
+                      onClick={() =>
+                        handleToggleDescription(course.id)
+                      }
+                      className='text-primary hover:underline text-sm font-semibold'
+                    >
+                      {expandedDescriptions[course.id]
+                        ? 'Ver menos'
+                        : 'Ver más'}
+                    </button>
+                  </div>
                   {course.link ? (
                     <a
                       href={course.link}
@@ -337,7 +372,7 @@ const CoursesSection = () => {
                     style={{ objectFit: 'cover' }}
                     className='transition-transform duration-300 group-hover:scale-95'
                   />
-                  <div className='absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 backdrop-blur-sm'>
+                  <div className='absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 p-4 backdrop-blur-sm'>
                     <div
                       className='prose prose-sm prose-invert prose-cmsContent max-w-none'
                       dangerouslySetInnerHTML={{
@@ -362,6 +397,45 @@ const CoursesSection = () => {
                   <h4 className='text-xl font-semibold mb-2 text-card-foreground'>
                     {event.title}
                   </h4>
+                  <div className='md:hidden my-2'>
+                    <button
+                      onClick={() =>
+                        handleToggleDescription(event.id)
+                      }
+                      className='text-primary hover:underline text-sm font-semibold'
+                    >
+                      {expandedDescriptions[event.id]
+                        ? 'Ver menos descripción'
+                        : 'Ver más descripción'}
+                    </button>
+                  </div>
+                  <div
+                    className={`md:hidden prose prose-sm max-w-none my-2 ${
+                      expandedDescriptions[event.id]
+                        ? 'block'
+                        : 'hidden'
+                    } md:block`}
+                    dangerouslySetInnerHTML={{
+                      __html: event.description,
+                    }}
+                  />
+                  {event.more && (
+                    <div className='my-4'>
+                      <Button
+                        variant='link'
+                        className={`text-primary p-0 h-auto hover:underline text-sm font-semibold ${
+                          expandedDescriptions[event.id]
+                            ? 'block'
+                            : 'hidden'
+                        }`}
+                        onClick={() =>
+                          setSelectedEventForModal(event)
+                        }
+                      >
+                        Ver todos los detalles
+                      </Button>
+                    </div>
+                  )}
                   {!isNaN(event.timestamp?.getTime()) ? (
                     (() => {
                       const startTime = event.timestamp
