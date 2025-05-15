@@ -140,8 +140,9 @@ const CoursesSection = () => {
                   <Image
                     src={course.img}
                     alt={course.title}
-                    layout='fill'
-                    objectFit='cover'
+                    fill
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                    style={{ objectFit: 'cover' }}
                     className='transition-transform duration-300 group-hover:scale-95'
                   />
                   <div className='absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 backdrop-blur-sm'>
@@ -251,8 +252,9 @@ const CoursesSection = () => {
                   <Image
                     src={event.img}
                     alt={event.title}
-                    layout='fill'
-                    objectFit='cover'
+                    fill
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                    style={{ objectFit: 'cover' }}
                     className='transition-transform duration-300 group-hover:scale-95'
                   />
                   <div className='absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 backdrop-blur-sm'>

@@ -12,6 +12,7 @@ export default function HeroSection() {
             width={600}
             height={300}
             className='mb-8'
+            style={{ width: 'auto', height: 'auto' }}
           />
           <p className='text-2xl text-center text-[var(--text-dark)] mb-6 lg:h-[20%]'>
             Te acompaño a encontrar y tratar el origen de

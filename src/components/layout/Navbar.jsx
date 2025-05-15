@@ -21,6 +21,7 @@ export default function Navbar() {
             alt='Dra. Nadia Homsi Logo'
             width={120}
             height={40}
+            style={{ width: 'auto', height: 'auto' }}
           />
         </Link>
         <div className='space-x-4 lg:flex hidden'>

@@ -163,6 +163,7 @@ const SessionsSection = () => {
             width={400}
             height={600}
             className='rounded-2xl shadow-lg transition-transform duration-700 scale-110 hover:scale-100'
+            style={{ width: 'auto', height: 'auto' }}
           />
         </div>
       </div>
