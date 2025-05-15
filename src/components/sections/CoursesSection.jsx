@@ -2,10 +2,17 @@
 
 import React, { useState, useEffect } from 'react'
 import { db } from '@/lib/firebase'
+import {
+  getStorage,
+  ref as storageRef,
+  listAll,
+  getDownloadURL,
+} from 'firebase/storage' //
 import { collection, getDocs } from 'firebase/firestore'
 import Image from 'next/image'
 import { Button } from '../ui/button'
-import Modal from '../ui/Modal' // Import the Modal component
+import Modal from '../ui/Modal'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const CoursesSection = () => {
   const [courses, setCourses] = useState([])
@@ -14,7 +21,10 @@ const CoursesSection = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [selectedEventForModal, setSelectedEventForModal] =
-    useState(null) // State for modal
+    useState(null)
+  const [workshopImages, setWorkshopImages] = useState([])
+  const [currentImageIndex, setCurrentImageIndex] =
+    useState(0)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,6 +58,30 @@ const CoursesSection = () => {
             return { id: doc.id, ...data, timestamp }
           })
           .sort((a, b) => a.timestamp - b.timestamp)
+
+        try {
+          const storage = getStorage()
+          const workshopFolderRef = storageRef(
+            storage,
+            'workshops',
+          )
+          const imageListResponse = await listAll(
+            workshopFolderRef,
+          )
+          const urls = await Promise.all(
+            imageListResponse.items.map((itemRef) =>
+              getDownloadURL(itemRef),
+            ),
+          )
+          setWorkshopImages(urls)
+        } catch (storageError) {
+          console.warn(
+            'Error fetching workshop images from Storage:',
+            storageError,
+          )
+          setWorkshopImages([])
+        }
+
         setEvents(eventList)
       } catch (err) {
         console.error(
@@ -64,6 +98,18 @@ const CoursesSection = () => {
 
     fetchData()
   }, [])
+
+  useEffect(() => {
+    if (workshopImages.length > 1) {
+      const intervalId = setInterval(() => {
+        setCurrentImageIndex(
+          (prevIndex) =>
+            (prevIndex + 1) % workshopImages.length,
+        )
+      }, 3000)
+      return () => clearInterval(intervalId)
+    }
+  }, [workshopImages, workshopImages.length])
 
   // Helper function to format dates for Google Calendar links
   const formatDateForGoogleCalendar = (date) => {
@@ -234,6 +280,40 @@ const CoursesSection = () => {
                 No hay talleres disponibles en este momento.
               </p>
             )
+          )}
+          {workshopImages.length > 0 && (
+            <div className='relative w-full max-w-2xl h-64 md:h-80 lg:h-96 mx-auto mt-8 mb-10 overflow-hidden rounded-xl shadow-xl'>
+              <AnimatePresence initial={false}>
+                <motion.div
+                  key={currentImageIndex}
+                  className='absolute inset-0 w-full h-full'
+                  initial={{ x: '100%', opacity: 0.7 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: '-100%', opacity: 0.7 }}
+                  transition={{
+                    x: {
+                      type: 'spring',
+                      stiffness: 250,
+                      damping: 30,
+                    },
+                    opacity: { duration: 0.3 },
+                  }}
+                >
+                  <Image
+                    src={workshopImages[currentImageIndex]}
+                    alt={`Imagen de taller ${
+                      currentImageIndex + 1
+                    }`}
+                    fill
+                    // Adjusted sizes for a max-w-2xl container (approx 896px)
+                    sizes='(max-width: 768px) 100vw, 896px'
+                    style={{ objectFit: 'cover' }} // Cover ensures the image fills without distortion
+                    priority={currentImageIndex === 0} // Prioritize loading for the first image
+                    className='rounded-xl' // Match parent's rounded corners
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
           )}
         </div>
 

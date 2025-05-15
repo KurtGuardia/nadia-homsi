@@ -42,7 +42,7 @@ export default function AboutSection() {
               />
             </div>
           </div>
-          <div className='lg:w-2/3 lg:pl-12 lg:pl-16'>
+          <div className='lg:w-2/3 lg:pl-12'>
             <p className='text-3xl text-[var(--secondary-color)] font-bold mb-4'>
               Médica y Terapeuta holística{' '}
             </p>

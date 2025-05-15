@@ -32,7 +32,6 @@ export default function VisionSection() {
                 width={400}
                 height={400}
                 className='rounded-2xl shadow-lg transition-transform duration-700 scale-110 hover:scale-100'
-                style={{ width: 'auto', height: 'auto' }}
               />
             </div>
           </div>
