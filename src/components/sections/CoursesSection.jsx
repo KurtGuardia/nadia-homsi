@@ -13,8 +13,11 @@ import Image from 'next/image'
 import { Button } from '../ui/button'
 import Modal from '../ui/Modal'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useRouter } from "next/navigation";
 
 const CoursesSection = () => {
+  const router = useRouter();
+
   const [courses, setCourses] = useState([])
   const [workshops, setWorkshops] = useState([])
   const [events, setEvents] = useState([])
@@ -142,12 +145,18 @@ const CoursesSection = () => {
     return `${year}${month}${day}T${hours}${minutes}${seconds}`
   }
 
+  const handleRedirectCourseDetails = () => {
+    router.push("/details");
+  }
+
   if (loading) {
     return (
       <section
         id='courses'
         className='py-16 bg-background text-foreground'
       >
+                  <button onClick={handleRedirectCourseDetails}>test</button>
+
         <div className='container mx-auto px-4 text-center'>
           <p className='text-xl lg:text-5xl font-bold text-primary animate-pulse'>
             Cargando cursos y talleres...
@@ -179,7 +188,6 @@ const CoursesSection = () => {
         <h2 className='text-5xl font-bold text-center text-secondary font-handwritten tracking-wider mb-12'>
           Nuestros Cursos y Talleres
         </h2>
-
         {/* Courses Subsection */}
         <div className='mb-16 lg:mb-24'>
           <h3 className='text-center text-3xl text-secondary font-bold mb-4 lg:mb-10'>

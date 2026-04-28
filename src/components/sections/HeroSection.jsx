@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 
 export default function HeroSection() {
   return (
-    <section className='container flex flex-col gap-2 mx-auto h-full lg:h-[90vh]'>
+    <section className='container flex flex-col mx-auto h-full lg:h-[80vh]'>
       <div className='flex flex-col lg:flex-row items-center flex-1'>
         <div className='lg:w-1/2 h-fit px-0 lg:px-10'>
           <Image

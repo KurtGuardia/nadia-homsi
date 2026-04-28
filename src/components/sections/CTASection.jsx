@@ -4,7 +4,7 @@ export default function CTASection() {
   return (
     <section
       id='contacto'
-      className='container mx-auto py-16 md:py-24 lg:py-32 text-center'
+      className='container mx-auto py-4 md:py-24 lg:py-8 text-center'
     >
       <h2 className='text-5xl font-bold text-center text-secondary-color mb-8 font-handwritten'>
         ¿List@ para comenzar tu viaje?

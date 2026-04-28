@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { StepCard } from '../cards/StepCard'
 
 const SessionType = {
   PRESENCIAL: 'presencial',
@@ -59,34 +60,10 @@ const SessionsSection = () => {
     </button>
   )
 
-  const StepCard = ({ number, content }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.3, delay: number * 0.1 }}
-      whileHover={{
-        y: -5,
-        boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
-        transition: { duration: 0.2 },
-      }}
-      className='bg-white p-2 md:p-6 rounded-xl shadow-md transition-shadow duration-300 cursor-default'
-    >
-      <div className='flex items-start space-x-4'>
-        <span className='flex-shrink-0 w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center'>
-          {number + 1}
-        </span>
-        <p className='text-lg text-[var(--text-dark)]'>
-          {content}
-        </p>
-      </div>
-    </motion.div>
-  )
-
   return (
     <section
       id='sessions'
-      className='container mx-auto py-16 md:py-24 lg:py-32'
+      className='container mx-auto py-4 md:py-24 lg:py-8'
     >
       <h2 className='text-5xl font-bold text-center text-secondary font-handwritten tracking-wider mb-12'>
         ¿Cómo son las sesiones conmigo?

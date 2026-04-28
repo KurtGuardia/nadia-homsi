@@ -1,81 +1,71 @@
-// app/components/PartnersSection.jsx
-import React from 'react'
-import Image from 'next/image' // If you want to use logos/profile pics later
-import { FaInstagram } from 'react-icons/fa'
+import React from "react";
+import Image from "next/image";
+import { FaInstagram } from "react-icons/fa";
 
-// IMPORTANT: You need to verify these names and associations by checking the IG profiles.
-// The 'displayName' is what will be shown. The 'nameFromIG' is a placeholder for you to fill after checking.
 const partnersData = [
   {
-    // Based on client: "Lorena (@balance_nutricionintegrativa...)"
-    displayName: 'Victoria', // Or the actual name/brand from the IG profile
-    handle: '@balance_nutricionintegrativa',
-    url: 'https://www.instagram.com/balance_nutricionintegrativa/',
-    // nameFromIG: "Actual Name/Brand for @balance_nutricionintegrativa", // TODO: You verify and update
+    displayName: "Victoria",
+    handle: "@balance_nutricionintegrativa",
+    url: "https://www.instagram.com/balance_nutricionintegrativa/",
   },
   {
-    // Assuming Victoria is next as per "Victoria, Mishel, Lorena" and the second handle
-    displayName: 'Mishel', // Or the actual name/brand from the IG profile
-    handle: '@danzando.con.la.vida',
-    url: 'https://www.instagram.com/danzando.con.la.vida/',
-    // nameFromIG: "Actual Name/Brand for @danzando.con.la.vida", // TODO: You verify and update
+    displayName: "Mishel",
+    handle: "@danzando.con.la.vida",
+    url: "https://www.instagram.com/danzando.con.la.vida/",
   },
   {
-    // Assuming Mishel is last as per "Victoria, Mishel, Lorena" and the third handle
-    displayName: 'Paula', // Or the actual name/brand from the IG profile
-    handle: '@centro_holistico_alas',
-    url: 'https://www.instagram.com/centro_holistico_alas_/',
-    // nameFromIG: "Actual Name/Brand for @centro_holistico_alas", // TODO: You verify and update
+    displayName: "Paula",
+    handle: "@centro_holistico_alas",
+    url: "https://www.instagram.com/centro_holistico_alas_/",
   },
-]
+];
 
 const PartnersSection = () => {
   return (
     <section
-      id='partners'
-      className='bg-primary py-16 md:py-24 lg:py-32 text-white'
+      id="partners"
+      className="relative overflow-hidden py-6 md:py-8 lg:py-7 text-white"
     >
-      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center mb-10 md:mb-14'>
-          <h2 className='text-5xl font-bold text-center font-handwritten tracking-wider mb-12'>
+      <div className="absolute inset-0 -z-20 bg-gradient-to-r from-[var(--secondary-color)] via-[#5e3732] to-[var(--primary)]" />
+      <div className="hidden md:block absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
+      <div className="hidden md:block absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+          <h2 className="text-5xl font-bold font-handwritten tracking-wider mb-8">
             Colaboraciones
           </h2>
-          <p className='text-2xl mb-4 mt-3 sm:mt-4 mx-auto'>
-            Trabajo en conjunto con estas maravillosas
-            profesionales.
-            <br /> ¡Conoce más sobre ellas!
+
+          <p className="text-xl md:text-2xl text-white/85 leading-relaxed">
+            Trabajo en conjunto con estas maravillosas profesionales.
+            <br />
+            ¡Conoce más sobre ellas!
           </p>
         </div>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {partnersData.map((partner) => (
             <a
               key={partner.handle}
               href={partner.url}
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label={`Visita el perfil de Instagram de ${partner.displayName} (${partner.handle})`}
-              className='group bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out flex flex-col items-center text-center transform hover:-translate-y-1'
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-2xl bg-white/95 backdrop-blur-sm p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-center flex flex-col items-center"
             >
-              {/* Optional: Placeholder for a profile picture or logo
-              <div className="w-24 h-24 rounded-full bg-gray-200 mb-4 overflow-hidden group-hover:ring-4 group-hover:ring-teal-300 transition-all duration-300">
-                {partner.image ? (
-                  <Image src={partner.image} alt={partner.displayName} width={96} height={96} className="object-cover w-full h-full" />
-                ) : (
-                  <span className="flex items-center justify-center w-full h-full text-3xl text-gray-400">
-                    {partner.displayName.charAt(0)}
-                  </span>
-                )}
+              <div className="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-3xl font-bold mb-5 shadow-md">
+                {partner.displayName.charAt(0)}
               </div>
-              */}
-              <h3 className='text-xl font-semibold text-gray-800 group-hover:text-teal-600 transition-colors duration-300'>
+
+              <h3 className="text-2xl font-semibold text-gray-800 group-hover:text-primary transition-colors">
                 {partner.displayName}
               </h3>
-              <p className='text-sm text-teal-500 group-hover:text-teal-700 transition-colors duration-300 mt-1 mb-3 flex items-center'>
-                <FaInstagram className='w-4 h-4 mr-1.5' />
+
+              <p className="text-sm text-primary mt-2 mb-4 flex items-center">
+                <FaInstagram className="mr-2 text-base" />
                 {partner.handle}
               </p>
-              <span className='mt-auto text-xs text-gray-500 group-hover:text-gray-700 transition-colors duration-300 border-t border-gray-200 pt-2 w-full'>
+
+              <span className="mt-auto text-sm text-gray-500 border-t border-gray-200 pt-4 w-full group-hover:text-gray-700 transition">
                 Visitar perfil en Instagram
               </span>
             </a>
@@ -83,7 +73,7 @@ const PartnersSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PartnersSection
+export default PartnersSection;

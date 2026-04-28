@@ -10,6 +10,8 @@ import InstagramSection from '@/components/sections/InstagramSection'
 import SessionsSection from '@/components/sections/SessionsSection'
 import TestimonySection from '@/components/sections/TestimonySection'
 import PartnersSection from '@/components/sections/PartnersSection'
+import TestimonySectionImprove from '@/components/sections/TestimonySectionImprove'
+import CoursesSectionCloudinary from '@/components/sections/CoursesSectionCloudinary'
 
 export default function Home() {
   return (
@@ -20,10 +22,12 @@ export default function Home() {
       <MethodologySection />
       <SessionsSection />
       <VisionSection />
-      <CoursesSection />
-      <InstagramSection />
+      <CoursesSectionCloudinary />
+      {/* <CoursesSection /> */}
       <PartnersSection />
-      <TestimonySection />
+      <InstagramSection />
+      <TestimonySectionImprove />
+      {/* <TestimonySection /> */}
       <CTASection />
       <Footer />
     </main>

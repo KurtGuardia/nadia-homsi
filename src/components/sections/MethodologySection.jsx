@@ -11,7 +11,7 @@ const MethodologySection = () => {
   return (
     <section
       id='metodologia'
-      className='container mx-auto py-16 md:py-24 lg:py-32'
+      className='container mx-auto py-8 md:py-24 lg:py-8'
     >
       <h2 className='text-5xl font-bold text-center text-secondary mb-12 font-handwritten tracking-wider'>
         Mi Metodología

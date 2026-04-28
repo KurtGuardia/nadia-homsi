@@ -22,11 +22,11 @@
     --popover: var(--background);
     --popover-foreground: var(--text-dark);
 
-    --primary: #7c9082;
+    --primary: #d18130;
     --primary-rgb: 124, 144, 130;
     --primary-foreground: var(--background);
 
-    --secondary-color: #4a4063;
+    --secondary-color: #402324;
     --secondary-color-rgb: 74, 64, 99;
     --secondary-color-foreground: var(--background);
 
